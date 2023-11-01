@@ -26,6 +26,10 @@ This role only supports Ubuntu Server LTS platforms:
   - Docker Registry : https://docs.docker.com/registry/
   - Distribution : https://github.com/distribution/distribution
 
+**Implementation notes**
+  
+  - **Binary installation** : this roles installs the Registry using the official binary, no other methods will be supported (such as Docker container).
+
 ### Role variables
 
 | Name                              | Default                      | Description                                                      |
