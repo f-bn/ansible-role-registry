@@ -1,0 +1,32 @@
+---
+- name: Check if Registry binary is already installed
+  ansible.builtin.stat:
+    path: "{{ registry_install_dir }}/registry"
+  register: _registry_binary
+
+- name: Install Registry
+  when: not _registry_binary.stat.exists or registry_bin_update
+  block:
+    - name: Download Registry binary archive
+      ansible.builtin.get_url:
+        url: "{{ registry_bin_archive_url }}"
+        dest: "/tmp/registry_{{ registry_version }}.tar.gz"
+        checksum: "{{ registry_bin_archive_checksum_url }}"
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Ensure Registry binary is installed
+      ansible.builtin.unarchive:
+        src: "/tmp/registry_{{ registry_version }}.tar.gz"
+        dest: "{{ registry_install_dir }}"
+        include: ['registry']
+        remote_src: yes
+        owner: root
+        group: root
+        mode: '0755'
+
+    - name: Ensure Registry binary archive is purged
+      ansible.builtin.file:
+        path: "/tmp/registry_{{ registry_version }}.tar.gz"
+        state: absent

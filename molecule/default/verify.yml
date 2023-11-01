@@ -3,6 +3,24 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: Example assertion
+    - name: Retrieve system services status
+      ansible.builtin.service_facts:
+
+    - name: Check if Registry service is enabled and running
       ansible.builtin.assert:
-        that: true
+        that:
+          - services["registry.service"]["state"] == "running"
+          - services["registry.service"]["status"] == "enabled"
+
+    - name: Check if Registry port is open
+      ansible.builtin.wait_for:
+        host: '0.0.0.0'
+        port: 5000
+        timeout: 30
+        state: started
+
+    - name: Check if Registry API is responding to requests
+      ansible.builtin.uri:
+        url: 'http://localhost:5000/v2/_catalog'
+        method: GET
+        return_content: true

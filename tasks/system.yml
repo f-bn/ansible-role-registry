@@ -1,0 +1,14 @@
+---
+- name: Ensure Registry user group exists
+  ansible.builtin.group:
+    name: registry
+    state: present
+
+- name: Ensure Registry user account exists
+  ansible.builtin.user:
+    name: registry
+    group: registry
+    shell: /usr/sbin/nologin
+    comment: "Registry user"
+    system: true
+    state: present

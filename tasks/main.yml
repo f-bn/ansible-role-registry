@@ -1,2 +1,14 @@
 ---
 # Tasks for 'registry' role
+
+- name: Pre-installation system tasks
+  ansible.builtin.import_tasks: system.yml
+
+- name: Install Registry
+  ansible.builtin.import_tasks: install.yml
+
+- name: Configure Registry
+  ansible.builtin.import_tasks: configure.yml
+
+- name: Manage Registry service
+  ansible.builtin.import_tasks: service.yml

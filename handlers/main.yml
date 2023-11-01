@@ -1,9 +1,9 @@
 ---
 # Handlers for 'registry' role
 
-#- name: Restart registry service
-#  ansible.builtin.systemd:
-#    name: registry.service
-#    state: restarted
-#    daemon_reload: true
-#  when: registry_restart_on_changes
+- name: Restart Registry service
+  ansible.builtin.systemd:
+    name: registry.service
+    state: restarted
+    daemon_reload: yes
+  when: registry_restart_on_changes

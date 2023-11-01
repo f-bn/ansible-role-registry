@@ -4,3 +4,33 @@
 # -----------------------------------------------------------------------------
 # GENERAL
 # -----------------------------------------------------------------------------
+registry_version: '2.8.3'
+
+# - Location -
+registry_install_dir: /usr/local/bin
+registry_config_dir: /etc/registry
+registry_config_path: "{{ registry_config_dir }}/config.yaml"
+registry_config_template: registry.default.yaml.j2
+registry_data_dir: /var/lib/registry
+registry_logs_dir: /var/log/registry
+
+# - Binary installation -
+registry_bin_archive_url: "https://github.com/distribution/distribution/releases/download/v{{ registry_version }}/registry_{{ registry_version }}_linux_amd64.tar.gz"
+registry_bin_archive_checksum_url: "sha256:https://github.com/distribution/distribution/releases/download/v{{ registry_version }}/registry_{{ registry_version }}_linux_amd64.tar.gz.sha256"
+registry_bin_update: false
+
+# - Misc -
+registry_restart_on_changes: false
+
+# -----------------------------------------------------------------------------
+# CONFIGURATION
+# -----------------------------------------------------------------------------
+registry_configuration:
+  version: '0.1'
+  log:
+    level: info
+  storage:
+    filesystem:
+      rootdirectory: "{{ registry_data_dir }}"
+  http:
+    addr: 127.0.0.1:5000

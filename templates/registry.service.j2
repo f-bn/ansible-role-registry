@@ -1,0 +1,19 @@
+# Managed by Ansible
+
+[Unit]
+Description=OCI Distribution Registry
+Documentation=https://docs.docker.com/registry/
+After=network-online.target local-fs.target
+AssertFileIsExecutable={{ registry_install_dir }}/registry
+AssertPathExists={{ registry_config_path }}
+
+[Service]
+Type=simple
+User=registry
+Group=registry
+ExecStart={{ registry_install_dir }}/registry serve {{ registry_config_path }}
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
