@@ -44,7 +44,7 @@ This role only supports Ubuntu Server LTS platforms:
 | `registry_bin_archive_url`        | see [defaults](defaults/main.yml) | Defines the URL where to download the Registry binary archive    |
 | `registry_bin_archive_checksum_url`| see [defaults](defaults/main.yml) | Defines the Registry binary archive remote checksum file        |
 | `registry_bin_update`             | `false`                      | If set to `true`, force the Registry binary update               |
-| `registry_configuration`          | see [defaults](defaults/main.yml) | Defines a YAML dict containing the Registry configuration (see [examples](€examples) below |
+| `registry_configuration`          | see [defaults](defaults/main.yml) | Defines a YAML dict containing the Registry configuration (see [examples](€examples) below) |
 
 ### Examples
 
