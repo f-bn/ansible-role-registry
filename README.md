@@ -67,7 +67,7 @@ registry_configuration:
   http:
     addr: 0.0.0.0:5000
     host: https://my.registry.internal:5000
-  # Configure the registry as pull-through cache
+  # Configure the registry as pull-through cache for the Docker Hub
   proxy:
     remoteurl: https://registry-1.docker.io
     username: "{{ registry_username }}"
