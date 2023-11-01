@@ -70,7 +70,7 @@ registry_configuration:
     password: "{{ registry_password }}"
 ```
 
-Note: you can also override the default template provided by the role to bring your custom template for your own needs using the `registry_config_template` variable.
+***Note***: you can also override the default template provided by the role to bring your custom template for your own needs using the `registry_config_template` variable.
 
 ### Install and use this role
 
