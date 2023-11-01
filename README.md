@@ -41,8 +41,8 @@ This role only supports Ubuntu Server LTS platforms:
 | `registry_config_template`        | `{{ registry_config_dir }}/config.yaml`|  Defines the path to the default template used to render custom Registry configuration |
 | `registry_data_dir`               | `/var/lib/registry`          | Defines the data directory where all registry files are stored   |
 | `registry_logs_dir`               | `/var/log/registry`          | Defines the logs directory of the Registry                       |
-| `registry_bin_archive_url`        | see [vars](vars/main.yml)    | Defines the URL where to download the Registry binary archive    |
-| `registry_bin_archive_checksum_url`| see [vars](vars/main.yml)    | Defines the Registry binary archive remote checksum file        |
+| `registry_bin_archive_url`        | see [defaults](defaults/main.yml) | Defines the URL where to download the Registry binary archive    |
+| `registry_bin_archive_checksum_url`| see [defaults](defaults/main.yml) | Defines the Registry binary archive remote checksum file        |
 | `registry_bin_update`             | `false`                      | If set to `true`, force the Registry binary update               |
 | `registry_configuration`          | see [defaults](defaults/main.yml) | Defines a YAML dict containing the Registry configuration (see [examples](€examples) below |
 
