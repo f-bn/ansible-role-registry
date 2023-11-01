@@ -74,6 +74,8 @@ registry_configuration:
     password: "{{ registry_password }}"
 ```
 
+More informations about configuration options here: https://distribution.github.io/distribution/about/configuration/ 
+
 ***Note***: you can also override the default template provided by the role to bring your custom template for your own needs using the `registry_config_template` variable.
 
 ### Install and use this role
