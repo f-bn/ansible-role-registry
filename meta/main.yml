@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  role_name: registry
+  namespace: fbn587
+  description: Ansible role to install and configure the Docker Registry
+  author: f-bn
+  license: MIT
+  min_ansible_version: '8.0.0'
+  issue_tracker_url: https://github.com/f-bn/ansible-role-registry/issues
+  platforms:
+    - name: Ubuntu
+      versions:
+        - 'jammy'
+  galaxy_tags: []
+dependencies: []
