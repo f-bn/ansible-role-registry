@@ -11,7 +11,7 @@
       ansible.builtin.get_url:
         url: "{{ registry_bin_archive_url }}"
         dest: "/tmp/registry_{{ registry_version }}.tar.gz"
-        checksum: "{{ registry_bin_archive_checksum_url }}"
+        checksum: "sha256:{{ registry_bin_archive_checksum_url }}"
         owner: root
         group: root
         mode: '0644'

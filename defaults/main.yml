@@ -16,7 +16,7 @@ registry_logs_dir: /var/log/registry
 
 # - Binary installation -
 registry_bin_archive_url: "https://github.com/distribution/distribution/releases/download/v{{ registry_version }}/registry_{{ registry_version }}_linux_amd64.tar.gz"
-registry_bin_archive_checksum_url: "sha256:https://github.com/distribution/distribution/releases/download/v{{ registry_version }}/registry_{{ registry_version }}_linux_amd64.tar.gz.sha256"
+registry_bin_archive_checksum_url: "https://github.com/distribution/distribution/releases/download/v{{ registry_version }}/registry_{{ registry_version }}_linux_amd64.tar.gz.sha256"
 registry_bin_update: false
 
 # - Misc -
